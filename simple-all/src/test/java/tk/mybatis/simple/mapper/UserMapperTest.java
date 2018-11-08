@@ -1,19 +1,14 @@
 package tk.mybatis.simple.mapper;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
-
 import tk.mybatis.simple.model.SysPrivilege;
 import tk.mybatis.simple.model.SysRole;
 import tk.mybatis.simple.model.SysUser;
 import tk.mybatis.simple.type.Enabled;
+
+import java.util.*;
 
 public class UserMapperTest extends BaseMapperTest {
 	
@@ -76,7 +71,7 @@ public class UserMapperTest extends BaseMapperTest {
 		try {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 			//调用 selectRolesByUserIdAndRoleEnabled 方法查询用户的角色
-			List<SysRole> roleList = userMapper.selectRolesByUserIdAndRoleEnabled(1L, null);
+			List<SysRole> roleList = userMapper.selectRolesByUserIdAndRoleEnabled(1L, 1);
 			//结果不为空
 			Assert.assertNotNull(roleList);
 			//角色数量大于 0 个
