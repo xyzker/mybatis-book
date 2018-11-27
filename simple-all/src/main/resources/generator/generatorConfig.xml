@@ -17,9 +17,9 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/mybatis"
-                        userId="root"
-                        password="">
+                        connectionURL="jdbc:mysql://10.24.76.252:5002/cpush_beta"
+                        userId="qcs_test"
+                        password="qcs_test">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="test.model" targetProject="src\main\java">
