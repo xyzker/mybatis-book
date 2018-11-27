@@ -22,14 +22,14 @@
                         password="qcs_test">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="test.model" targetProject="src\main\java">
+        <javaModelGenerator targetPackage="test.model" targetProject="src/main/java">
             <property name="trimStrings" value="true" />
             <property name="rootClass" value="tk.mybatis.simple.model.BaseEntity" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="test.xml"  targetProject="src\main\resources"/>
+        <sqlMapGenerator targetPackage="test.xml"  targetProject="src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="src\main\java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="src/main/java"/>
 
         <table tableName="%">
             <generatedKey column="id" sqlStatement="MySql"/>
