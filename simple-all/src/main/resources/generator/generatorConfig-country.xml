@@ -15,18 +15,18 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/mybatis"
-                        userId="root"
-                        password="">
+                        connectionURL="jdbc:mysql://10.24.76.252:5002/cpush_beta"
+                        userId="qcs_test"
+                        password="qcs_test">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="tk.mybatis.simple.model" targetProject="simple\src\main\java">
+        <javaModelGenerator targetPackage="tk.mybatis.simple.model" targetProject="src/main/java">
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="tk.mybatis.simple.mapper"  targetProject="simple\src\main\resources"/>
+        <sqlMapGenerator targetPackage="tk.mybatis.simple.mapper"  targetProject="src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="tk.mybatis.simple.mapper"  targetProject="simple\src\main\java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="tk.mybatis.simple.mapper"  targetProject="src/main/java"/>
 
         <table tableName="country">
             <generatedKey column="id" sqlStatement="MySql"/>
