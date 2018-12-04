@@ -39,8 +39,8 @@ public class CacheTest extends BaseMapperTest {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 			//调用 selectById 方法，查询 id = 1 的用户
 			SysUser user2 = userMapper.selectById(1l);
-			//第二个 session 获取的用户名仍然是 admin
-			Assert.assertNotEquals("New Name", user2.getUserName());
+			//第二个 session 获取的用户名仍然是 New Name
+			Assert.assertEquals("New Name", user2.getUserName());
 			//这里的 user2 和 前一个 session 查询的结果是两个不同的实例
 			Assert.assertNotEquals(user1, user2);
 			//执行删除操作
