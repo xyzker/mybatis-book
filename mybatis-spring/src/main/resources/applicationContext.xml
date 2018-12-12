@@ -17,9 +17,9 @@
 
     <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
-        <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="url" value="jdbc:mysql://10.24.76.252:5002/cpush_beta"/>
+        <property name="username" value="qcs_test"/>
+        <property name="password" value="qcs_test"/>
     </bean>
     
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
