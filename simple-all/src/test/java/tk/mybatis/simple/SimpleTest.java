@@ -1,10 +1,5 @@
 package tk.mybatis.simple;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.ibatis.binding.MapperProxyFactory;
 import org.apache.ibatis.builder.StaticSqlSource;
 import org.apache.ibatis.cache.Cache;
@@ -16,12 +11,7 @@ import org.apache.ibatis.cache.impl.PerpetualCache;
 import org.apache.ibatis.datasource.unpooled.UnpooledDataSource;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.logging.LogFactory;
-import org.apache.ibatis.mapping.MappedStatement;
-import org.apache.ibatis.mapping.ParameterMap;
-import org.apache.ibatis.mapping.ParameterMapping;
-import org.apache.ibatis.mapping.ResultMap;
-import org.apache.ibatis.mapping.ResultMapping;
-import org.apache.ibatis.mapping.SqlCommandType;
+import org.apache.ibatis.mapping.*;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -30,8 +20,12 @@ import org.apache.ibatis.transaction.Transaction;
 import org.apache.ibatis.transaction.jdbc.JdbcTransaction;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.junit.Test;
-
 import tk.mybatis.simple.model.Country;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleTest {
 
@@ -55,9 +49,9 @@ public class SimpleTest {
         //创建 DataSource
         UnpooledDataSource dataSource = new UnpooledDataSource();
         dataSource.setDriver("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/mybatis");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:mysql://10.24.76.252:5002/cpush_beta");
+        dataSource.setUsername("test");
+        dataSource.setPassword("test");
 
         //创建 JDBC 事务
         Transaction transaction = new JdbcTransaction(dataSource, null, false);
